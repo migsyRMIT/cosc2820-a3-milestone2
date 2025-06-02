@@ -10,7 +10,7 @@
     onload="this.rel='stylesheet'"
     href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
   >
-  <title>Elegant A-Line Dress</title>
+  <title>{{ item.title }}</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
@@ -21,107 +21,110 @@
       <!-- Product Page Content -->
       <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <!-- Breadcrumb -->
-          <div class="flex flex-wrap gap-2 p-4">
-            <a class="text-neutral-500 text-base font-medium leading-normal hover:text-neutral-700 transition-colors" href="/">Home</a>
-            <span class="text-neutral-500 text-base font-medium leading-normal">/</span>
-            <a class="text-neutral-500 text-base font-medium leading-normal hover:text-neutral-700 transition-colors" href="/shop">Shop</a>
-            <span class="text-neutral-500 text-base font-medium leading-normal">/</span>
-            <span class="text-[#141414] text-base font-medium leading-normal">Elegant A-Line Dress</span>
-          </div>
+          <!-- Back to Shop Link -->
+          <a href="/shop" class="text-[#141414] hover:text-neutral-600 mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M168.49,199.51a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128l71.51,71.51A12,12,0,0,1,168.49,199.51Z"></path>
+            </svg>
+            Back to Shop
+          </a>
 
-          <!-- Product Title -->
-          <h1 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Elegant A-Line Dress</h1>
-          
-          <!-- Product Description -->
-          <p class="text-[#141414] text-base font-bold leading-normal pb-3 pt-1 px-4">
-            Description:
-          </p>
-          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
-            A classic A-line dress that flows gracefully, perfect for any occasion. Tailored for a flattering fit.
-          </p>
+          <!-- Item Details -->
+          <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <h1 class="text-2xl font-bold text-[#141414] mb-4">{{ item.title }}</h1>
+            
+            <!-- Item Categories -->
+            <div class="flex flex-wrap gap-4 mb-6">
+              <div class="bg-neutral-100 px-3 py-1 rounded-full text-sm">
+                <span class="text-neutral-600">Division:</span>
+                <span class="text-[#141414] font-medium">{{ item.division }}</span>
+              </div>
+              <div class="bg-neutral-100 px-3 py-1 rounded-full text-sm">
+                <span class="text-neutral-600">Department:</span>
+                <span class="text-[#141414] font-medium">{{ item.department }}</span>
+              </div>
+              <div class="bg-neutral-100 px-3 py-1 rounded-full text-sm">
+                <span class="text-neutral-600">Class:</span>
+                <span class="text-[#141414] font-medium">{{ item.class }}</span>
+              </div>
+            </div>
 
-          <p class="text-[#141414] text-base font-bold leading-normal pb-3 pt-1 px-4">
-            Division Name:
-          </p>
-          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
-            General
-          </p>
+            <!-- Description -->
+            <div class="mb-6">
+              <h2 class="text-lg font-semibold text-[#141414] mb-2">Description</h2>
+              <p class="text-neutral-600">{{ item.description }}</p>
+            </div>
 
-          <p class="text-[#141414] text-base font-bold leading-normal pb-3 pt-1 px-4">
-            Department Name:
-          </p>
-          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
-            Dresses
-          </p>
-
-          <p class="text-[#141414] text-base font-bold leading-normal pb-3 pt-1 px-4">
-            Class Name:
-          </p>
-          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
-            Dresses
-          </p>
-
-          <!-- Buy Now Button -->
-          <div class="flex px-3 py-3 justify-start">
-            <button
-              id="buyNowBtn"
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-black text-neutral-50 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
-            >
-              <span class="truncate">Buy Now</span>
-            </button>
+            <!-- Buy Now Button -->
+            <div class="flex justify-start">
+              <button
+                id="buyNowBtn"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-black text-neutral-50 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+              >
+                <span class="truncate">Buy Now</span>
+              </button>
+            </div>
           </div>
 
           <!-- Reviews Section -->
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Reviews</h2>
-          <div id="reviewsContainer" class="flex flex-col gap-8 overflow-x-hidden bg-neutral-50 p-4">
-            <div class="flex flex-col gap-3 bg-neutral-50">
-              <div class="flex items-center gap-3">
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb6kEg_NQ7bLSeD2dWgPlNkTJtwwcywDylUf1XU8qk1Uj5wrZzm1jZwdBW5sSYdhsbKLBMhRVJG0gGIsPp02akgjkR2OncrDdYSPh3rSuLhRIU1ysxSOo-pSmN6MzLrtPHBgIPJwM6xkvWBj8IeSNT2N5Res7BSZU8mMMZ8xvMXaDMsRIWSuoKZuRTfA7wTvZISp0r-_YAyLSNVuj3PRv5XJQTSWrwOs0P2mqAesiDm92TZMcO8a-M1TbFBGM87Jey2yVZvQMCGnjP");'
-                ></div>
-                <div class="flex-1">
-                  <p class="text-[#141414] text-base font-medium leading-normal">Anonymous User</p>
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-[#141414] mb-4">Customer Reviews ({{ item.total_reviews }})</h2>
+            
+            {% if item.reviews %}
+              {% for review in item.reviews %}
+              <div class="border-b border-neutral-200 last:border-0 py-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="flex">
+                    {% for i in range(5) %}
+                      {% if i < review.Rating %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFD700" viewBox="0 0 256 256">
+                          <path d="M239.2,97.4A16.4,16.4,0,0,0,224.6,86l-59.4-4.1-22-55.5A16.4,16.4,0,0,0,128,16h0a16.4,16.4,0,0,0-15.2,10.4L90.4,82.2,31.4,86A16.5,16.5,0,0,0,16.8,97.4,16.8,16.8,0,0,0,22,115.5l45.4,38.4L53.9,207a18.5,18.5,0,0,0,7.3,18.1,16.1,16.1,0,0,0,19.4,0l50.4-29.7,50.4,29.7a16.1,16.1,0,0,0,19.4,0,18.5,18.5,0,0,0,7.3-18.1l-13.5-53.1L234,115.5A16.8,16.8,0,0,0,239.2,97.4Z"></path>
+                        </svg>
+                      {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E5E7EB" viewBox="0 0 256 256">
+                          <path d="M239.2,97.4A16.4,16.4,0,0,0,224.6,86l-59.4-4.1-22-55.5A16.4,16.4,0,0,0,128,16h0a16.4,16.4,0,0,0-15.2,10.4L90.4,82.2,31.4,86A16.5,16.5,0,0,0,16.8,97.4,16.8,16.8,0,0,0,22,115.5l45.4,38.4L53.9,207a18.5,18.5,0,0,0,7.3,18.1,16.1,16.1,0,0,0,19.4,0l50.4-29.7,50.4,29.7a16.1,16.1,0,0,0,19.4,0,18.5,18.5,0,0,0,7.3-18.1l-13.5-53.1L234,115.5A16.8,16.8,0,0,0,239.2,97.4Z"></path>
+                        </svg>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 </div>
+                <h4 class="text-[#141414] text-lg font-bold leading-tight mb-2">{{ review.Title }}</h4>
+                <p class="text-neutral-600 mb-2">{{ review['Review Text'] }}</p>
+                <p class="text-neutral-500 text-sm font-normal leading-normal">
+                  {% if review['Recommended IND'] == 1 %}
+                    ✔️ I recommend this product
+                  {% else %}
+                    ✖️ I do not recommend this product
+                  {% endif %}
+                </p>
               </div>
-              
-              <!-- Star Rating -->
-              <div class="flex gap-0.5">
-                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
-                  </svg>
-                </div>
-                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
-                  </svg>
-                </div>
-                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
-                  </svg>
-                </div>
-                <div class="text-[#c2c2c2]" data-icon="Star" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
-                  </svg>
-                </div>
-                <div class="text-[#c2c2c2]" data-icon="Star" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
-                  </svg>
-                </div>
-              </div>
+              {% endfor %}
 
-              <!-- Review Content -->
-              <h4 class="text-[#141414] text-[18px] font-bold leading-tight tracking-[-0.015em] pb-1 pt-1">Some major design flaws</h4>
-              <p class="text-[#141414] text-base font-normal leading-normal">
-                I had such high hopes for this dress and really wanted it to work for me. I initially ordered the petite small (my usual size) but I found this to be outrageously small. So small in fact that I could not zip it up! I reordered it in petite medium, which was just ok. Overall, the top half was comfortable and fit nicely, but the bottom half had a very tight under layer and several somewhat cheap (net) over layers. IMO, a major design flaw was the net over layer sewn directly into the zipper...
-              </p>
-              <p class="text-neutral-500 text-sm font-normal leading-normal pb-3 pt-1">✖️ I do not recommend this product.</p>
-            </div>
+              <!-- Review Pagination -->
+              {% if item.total_review_pages > 1 %}
+              <div class="flex justify-center items-center gap-4 mt-6 pt-4 border-t border-neutral-200">
+                {% if item.current_review_page > 1 %}
+                <a href="{{ url_for('item', item_id=item.id, title=item.title, review_page=item.current_review_page-1) }}" 
+                   class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
+                  Previous
+                </a>
+                {% endif %}
+                
+                <span class="text-[#141414]">
+                  Page {{ item.current_review_page }} of {{ item.total_review_pages }}
+                </span>
+                
+                {% if item.current_review_page < item.total_review_pages %}
+                <a href="{{ url_for('item', item_id=item.id, title=item.title, review_page=item.current_review_page+1) }}" 
+                   class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
+                  Next
+                </a>
+                {% endif %}
+              </div>
+              {% endif %}
+            {% else %}
+              <p class="text-neutral-500">No reviews yet.</p>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -264,144 +267,133 @@
   </div>
 
   <script>
-    // Initialize modal functionality when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get modal elements
-      const confirmationModal = document.getElementById('confirmationModal');
-      const reviewModal = document.getElementById('reviewModal');
-      const modalContent = document.getElementById('modalContent');
-      const reviewModalContent = document.getElementById('reviewModalContent');
-      const buyNowBtn = document.getElementById('buyNowBtn');
-      const cancelBtn = document.getElementById('cancelBtn');
-      const confirmBtn = document.getElementById('confirmBtn');
-      const cancelReviewBtn = document.getElementById('cancelReviewBtn');
-      const reviewForm = document.getElementById('reviewForm');
-      const reviewsContainer = document.getElementById('reviewsContainer');
+    // Modal functionality
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    const confirmationModal = document.getElementById('confirmationModal');
+    const modalContent = document.getElementById('modalContent');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const reviewModal = document.getElementById('reviewModal');
+    const reviewModalContent = document.getElementById('reviewModalContent');
+    const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+    const reviewForm = document.getElementById('reviewForm');
 
-      // Star rating functionality
-      const starButtons = document.querySelectorAll('.star-btn');
-      const selectedRatingInput = document.getElementById('selectedRating');
-      let currentRating = 0;
+    function showModal(modal, content) {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
 
-      // Show modal function
-      function showModal(modal, content) {
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-          content.classList.add('scale-100', 'opacity-100');
-          content.classList.remove('scale-95', 'opacity-0');
-        }, 10);
-      }
+    function hideModal(modal, content) {
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
 
-      // Hide modal function
-      function hideModal(modal, content) {
-        content.classList.add('scale-95', 'opacity-0');
-        content.classList.remove('scale-100', 'opacity-100');
-        setTimeout(() => {
-          modal.classList.add('hidden');
-        }, 300);
-      }
+    // Buy Now button click handler
+    buyNowBtn.addEventListener('click', () => {
+      showModal(confirmationModal, modalContent);
+    });
 
-      // Star rating event listeners
-      starButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          currentRating = parseInt(button.dataset.rating);
-          selectedRatingInput.value = currentRating;
-          updateStarDisplay();
-        });
+    // Cancel button click handler
+    cancelBtn.addEventListener('click', () => {
+      hideModal(confirmationModal, modalContent);
+    });
 
-        button.addEventListener('mouseenter', () => {
-          const hoverRating = parseInt(button.dataset.rating);
-          highlightStars(hoverRating);
-        });
-      });
+    // Confirm button click handler
+    confirmBtn.addEventListener('click', () => {
+      hideModal(confirmationModal, modalContent);
+      setTimeout(() => {
+        showModal(reviewModal, reviewModalContent);
+      }, 400);
+    });
 
-      document.getElementById('starRating').addEventListener('mouseleave', () => {
-        updateStarDisplay();
-      });
+    // Review modal cancel button click handler
+    cancelReviewBtn.addEventListener('click', () => {
+      hideModal(reviewModal, reviewModalContent);
+    });
 
-      function highlightStars(rating) {
-        starButtons.forEach((button, index) => {
-          if (index < rating) {
-            button.classList.remove('text-[#c2c2c2]');
-            button.classList.add('text-yellow-400');
-          } else {
-            button.classList.remove('text-yellow-400');
-            button.classList.add('text-[#c2c2c2]');
-          }
-        });
-      }
-
-      function updateStarDisplay() {
-        highlightStars(currentRating);
-      }
-
-      // Event listeners for confirmation modal
-      buyNowBtn.addEventListener('click', () => showModal(confirmationModal, modalContent));
-      cancelBtn.addEventListener('click', () => hideModal(confirmationModal, modalContent));
-
-      // Event listeners for review modal
-      cancelReviewBtn.addEventListener('click', () => hideModal(reviewModal, reviewModalContent));
-
-      // Close modals when clicking outside
-      confirmationModal.addEventListener('click', (e) => {
-        if (e.target === confirmationModal) {
-          hideModal(confirmationModal, modalContent);
-        }
-      });
-
-      reviewModal.addEventListener('click', (e) => {
-        if (e.target === reviewModal) {
-          hideModal(reviewModal, reviewModalContent);
-        }
-      });
-
-      // Close modals with Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          if (!confirmationModal.classList.contains('hidden')) {
-            hideModal(confirmationModal, modalContent);
-          }
-          if (!reviewModal.classList.contains('hidden')) {
-            hideModal(reviewModal, reviewModalContent);
-          }
-        }
-      });
-
-      // Confirm purchase and show review modal
-      confirmBtn.addEventListener('click', () => {
+    // Close modals when clicking outside
+    confirmationModal.addEventListener('click', (e) => {
+      if (e.target === confirmationModal) {
         hideModal(confirmationModal, modalContent);
-        setTimeout(() => {
-          showModal(reviewModal, reviewModalContent);
-        }, 400);
-      });
+      }
+    });
 
-      // Handle review form submission
-      reviewForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(reviewForm);
-        const reviewData = {
-          title: formData.get('reviewTitle'),
-          description: formData.get('reviewDescription'),
-          rating: parseInt(formData.get('rating')),
-          age: formData.get('userAge')
-        };
-
-        if (reviewData.rating === 0) {
-          alert('Please select a rating before submitting your review.');
-          return;
-        }
-
-        // Reset form and close modal
-        reviewForm.reset();
-        currentRating = 0;
-        selectedRatingInput.value = 0;
-        updateStarDisplay();
+    reviewModal.addEventListener('click', (e) => {
+      if (e.target === reviewModal) {
         hideModal(reviewModal, reviewModalContent);
+      }
+    });
 
-        // Show success message
-        alert('Thank you for your review! Your feedback has been submitted.');
+    // Star rating functionality
+    const starButtons = document.querySelectorAll('.star-btn');
+    const selectedRatingInput = document.getElementById('selectedRating');
+    let currentRating = 0;
+
+    starButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentRating = parseInt(button.dataset.rating);
+        selectedRatingInput.value = currentRating;
+        updateStarDisplay();
       });
+
+      button.addEventListener('mouseenter', () => {
+        const hoverRating = parseInt(button.dataset.rating);
+        highlightStars(hoverRating);
+      });
+    });
+
+    document.getElementById('starRating').addEventListener('mouseleave', () => {
+      updateStarDisplay();
+    });
+
+    function highlightStars(rating) {
+      starButtons.forEach((button, index) => {
+        if (index < rating) {
+          button.classList.remove('text-[#c2c2c2]');
+          button.classList.add('text-yellow-400');
+        } else {
+          button.classList.remove('text-yellow-400');
+          button.classList.add('text-[#c2c2c2]');
+        }
+      });
+    }
+
+    function updateStarDisplay() {
+      highlightStars(currentRating);
+    }
+
+    // Handle review form submission
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(reviewForm);
+      const reviewData = {
+        title: formData.get('reviewTitle'),
+        description: formData.get('reviewDescription'),
+        rating: parseInt(formData.get('rating')),
+        age: formData.get('userAge')
+      };
+
+      if (reviewData.rating === 0) {
+        alert('Please select a rating before submitting your review.');
+        return;
+      }
+
+      // Reset form and close modal
+      reviewForm.reset();
+      currentRating = 0;
+      selectedRatingInput.value = 0;
+      updateStarDisplay();
+      hideModal(reviewModal, reviewModalContent);
+
+      // Show success message
+      alert('Thank you for your review! Your feedback has been submitted.');
     });
   </script>
 </body>
