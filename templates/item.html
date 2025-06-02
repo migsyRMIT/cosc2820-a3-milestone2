@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
+  >
+  <title>Elegant A-Line Dress</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-neutral-50 group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+    {% include 'navbar.html' %}
+      <!-- Product Page Content -->
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <!-- Breadcrumb -->
+          <div class="flex flex-wrap gap-2 p-4">
+            <a class="text-neutral-500 text-base font-medium leading-normal hover:text-neutral-700 transition-colors" href="/">Home</a>
+            <span class="text-neutral-500 text-base font-medium leading-normal">/</span>
+            <a class="text-neutral-500 text-base font-medium leading-normal hover:text-neutral-700 transition-colors" href="/shop">Shop</a>
+            <span class="text-neutral-500 text-base font-medium leading-normal">/</span>
+            <span class="text-[#141414] text-base font-medium leading-normal">Elegant A-Line Dress</span>
+          </div>
+
+          <!-- Product Title -->
+          <h1 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Elegant A-Line Dress</h1>
+          
+          <!-- Product Description -->
+          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+            A classic A-line dress that flows gracefully, perfect for any occasion. Tailored for a flattering fit.
+          </p>
+
+          <!-- Buy Now Button -->
+          <div class="flex px-3 py-3 justify-start">
+            <button
+              id="buyNowBtn"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-black text-neutral-50 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+            >
+              <span class="truncate">Buy Now</span>
+            </button>
+          </div>
+
+          <!-- Reviews Section -->
+          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Reviews</h2>
+          <div id="reviewsContainer" class="flex flex-col gap-8 overflow-x-hidden bg-neutral-50 p-4">
+            <div class="flex flex-col gap-3 bg-neutral-50">
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb6kEg_NQ7bLSeD2dWgPlNkTJtwwcywDylUf1XU8qk1Uj5wrZzm1jZwdBW5sSYdhsbKLBMhRVJG0gGIsPp02akgjkR2OncrDdYSPh3rSuLhRIU1ysxSOo-pSmN6MzLrtPHBgIPJwM6xkvWBj8IeSNT2N5Res7BSZU8mMMZ8xvMXaDMsRIWSuoKZuRTfA7wTvZISp0r-_YAyLSNVuj3PRv5XJQTSWrwOs0P2mqAesiDm92TZMcO8a-M1TbFBGM87Jey2yVZvQMCGnjP");'
+                ></div>
+                <div class="flex-1">
+                  <p class="text-[#141414] text-base font-medium leading-normal">Anonymous User</p>
+                </div>
+              </div>
+              
+              <!-- Star Rating -->
+              <div class="flex gap-0.5">
+                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </div>
+                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </div>
+                <div class="text-black" data-icon="Star" data-size="20px" data-weight="fill">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </div>
+                <div class="text-[#c2c2c2]" data-icon="Star" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </div>
+                <div class="text-[#c2c2c2]" data-icon="Star" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Review Content -->
+              <h4 class="text-[#141414] text-[18px] font-bold leading-tight tracking-[-0.015em] pb-1 pt-1">Some major design flaws</h4>
+              <p class="text-[#141414] text-base font-normal leading-normal">
+                I had such high hopes for this dress and really wanted it to work for me. I initially ordered the petite small (my usual size) but I found this to be outrageously small. So small in fact that I could not zip it up! I reordered it in petite medium, which was just ok. Overall, the top half was comfortable and fit nicely, but the bottom half had a very tight under layer and several somewhat cheap (net) over layers. IMO, a major design flaw was the net over layer sewn directly into the zipper...
+              </p>
+              <p class="text-neutral-500 text-sm font-normal leading-normal pb-3 pt-1">✖️ I do not recommend this product.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div 
+      id="confirmationModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[512px] w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+        <div class="px-6 py-8">
+          <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight text-center pb-6">
+            Are you sure you want to purchase this item?
+          </h2>
+          
+          <div class="flex gap-3 justify-center">
+            <button
+              id="cancelBtn"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 transition-colors"
+            >
+              <span class="truncate">Cancel</span>
+            </button>
+            <button
+              id="confirmBtn"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+            >
+              <span class="truncate">Confirm</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div 
+      id="reviewModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="reviewModalContent">
+        <div class="px-6 py-8">
+          <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight text-center pb-6">
+            Write a Review
+          </h2>
+          
+          <form id="reviewForm" class="space-y-6">
+            <!-- Review Title -->
+            <div>
+              <label for="reviewTitle" class="block text-[#141414] text-sm font-medium mb-2">Review Title</label>
+              <input
+                type="text"
+                id="reviewTitle"
+                name="reviewTitle"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-[#141414] placeholder-gray-500"
+                placeholder="Give your review a title"
+                required
+              >
+            </div>
+
+            <!-- Star Rating -->
+            <div>
+              <label class="block text-[#141414] text-sm font-medium mb-2">Rating</label>
+              <div class="flex gap-1" id="starRating">
+                <button type="button" class="star-btn text-[#c2c2c2] hover:text-yellow-400 transition-colors" data-rating="1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="star-btn text-[#c2c2c2] hover:text-yellow-400 transition-colors" data-rating="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="star-btn text-[#c2c2c2] hover:text-yellow-400 transition-colors" data-rating="3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="star-btn text-[#c2c2c2] hover:text-yellow-400 transition-colors" data-rating="4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="star-btn text-[#c2c2c2] hover:text-yellow-400 transition-colors" data-rating="5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+                  </svg>
+                </button>
+              </div>
+              <input type="hidden" id="selectedRating" name="rating" value="0" required>
+            </div>
+
+            <!-- Review Description -->
+            <div>
+              <label for="reviewDescription" class="block text-[#141414] text-sm font-medium mb-2">Review Description</label>
+              <textarea
+                id="reviewDescription"
+                name="reviewDescription"
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-[#141414] placeholder-gray-500 resize-vertical"
+                placeholder="Share your experience with this product..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Age -->
+            <div>
+              <label for="userAge" class="block text-[#141414] text-sm font-medium mb-2">Your Age</label>
+              <input
+                type="number"
+                id="userAge"
+                name="userAge"
+                min="1"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-[#141414] placeholder-gray-500"
+                placeholder="Enter your age"
+                required
+              >
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 justify-center pt-4">
+              <button
+                type="button"
+                id="cancelReviewBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 transition-colors"
+              >
+                <span class="truncate">Cancel</span>
+              </button>
+              <button
+                type="submit"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+              >
+                <span class="truncate">Submit Review</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize modal functionality when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get modal elements
+      const confirmationModal = document.getElementById('confirmationModal');
+      const reviewModal = document.getElementById('reviewModal');
+      const modalContent = document.getElementById('modalContent');
+      const reviewModalContent = document.getElementById('reviewModalContent');
+      const buyNowBtn = document.getElementById('buyNowBtn');
+      const cancelBtn = document.getElementById('cancelBtn');
+      const confirmBtn = document.getElementById('confirmBtn');
+      const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+      const reviewForm = document.getElementById('reviewForm');
+      const reviewsContainer = document.getElementById('reviewsContainer');
+
+      // Star rating functionality
+      const starButtons = document.querySelectorAll('.star-btn');
+      const selectedRatingInput = document.getElementById('selectedRating');
+      let currentRating = 0;
+
+      // Show modal function
+      function showModal(modal, content) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          content.classList.add('scale-100', 'opacity-100');
+          content.classList.remove('scale-95', 'opacity-0');
+        }, 10);
+      }
+
+      // Hide modal function
+      function hideModal(modal, content) {
+        content.classList.add('scale-95', 'opacity-0');
+        content.classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      // Star rating event listeners
+      starButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          currentRating = parseInt(button.dataset.rating);
+          selectedRatingInput.value = currentRating;
+          updateStarDisplay();
+        });
+
+        button.addEventListener('mouseenter', () => {
+          const hoverRating = parseInt(button.dataset.rating);
+          highlightStars(hoverRating);
+        });
+      });
+
+      document.getElementById('starRating').addEventListener('mouseleave', () => {
+        updateStarDisplay();
+      });
+
+      function highlightStars(rating) {
+        starButtons.forEach((button, index) => {
+          if (index < rating) {
+            button.classList.remove('text-[#c2c2c2]');
+            button.classList.add('text-yellow-400');
+          } else {
+            button.classList.remove('text-yellow-400');
+            button.classList.add('text-[#c2c2c2]');
+          }
+        });
+      }
+
+      function updateStarDisplay() {
+        highlightStars(currentRating);
+      }
+
+      // Event listeners for confirmation modal
+      buyNowBtn.addEventListener('click', () => showModal(confirmationModal, modalContent));
+      cancelBtn.addEventListener('click', () => hideModal(confirmationModal, modalContent));
+
+      // Event listeners for review modal
+      cancelReviewBtn.addEventListener('click', () => hideModal(reviewModal, reviewModalContent));
+
+      // Close modals when clicking outside
+      confirmationModal.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+          hideModal(confirmationModal, modalContent);
+        }
+      });
+
+      reviewModal.addEventListener('click', (e) => {
+        if (e.target === reviewModal) {
+          hideModal(reviewModal, reviewModalContent);
+        }
+      });
+
+      // Close modals with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (!confirmationModal.classList.contains('hidden')) {
+            hideModal(confirmationModal, modalContent);
+          }
+          if (!reviewModal.classList.contains('hidden')) {
+            hideModal(reviewModal, reviewModalContent);
+          }
+        }
+      });
+
+      // Confirm purchase and show review modal
+      confirmBtn.addEventListener('click', () => {
+        hideModal(confirmationModal, modalContent);
+        setTimeout(() => {
+          showModal(reviewModal, reviewModalContent);
+        }, 400);
+      });
+
+      // Handle review form submission
+      reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(reviewForm);
+        const reviewData = {
+          title: formData.get('reviewTitle'),
+          description: formData.get('reviewDescription'),
+          rating: parseInt(formData.get('rating')),
+          age: formData.get('userAge')
+        };
+
+        if (reviewData.rating === 0) {
+          alert('Please select a rating before submitting your review.');
+          return;
+        }
+
+        // Reset form and close modal
+        reviewForm.reset();
+        currentRating = 0;
+        selectedRatingInput.value = 0;
+        updateStarDisplay();
+        hideModal(reviewModal, reviewModalContent);
+
+        // Show success message
+        alert('Thank you for your review! Your feedback has been submitted.');
+      });
+    });
+  </script>
+</body>
+</html>
