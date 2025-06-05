@@ -20,7 +20,7 @@
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="px-4 py-3">
-              <label class="flex flex-col min-w-40 h-12 w-full">
+              <form action="{{ url_for('shop') }}" method="get" class="flex flex-col min-w-40 h-12 w-full">
                 <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
                   <div
                     class="text-neutral-500 flex border-none bg-[#ededed] items-center justify-center pl-4 rounded-l-xl border-r-0"
@@ -35,12 +35,18 @@
                     </svg>
                   </div>
                   <input
+                    name="search"
                     placeholder="Search for clothing items"
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#141414] focus:outline-0 focus:ring-0 border-none bg-[#ededed] focus:border-none h-full placeholder:text-neutral-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
-                    value=""
+                    value="{{ search_query }}"
                   />
                 </div>
-              </label>
+              </form>
+              {% if search_query %}
+                <p class="text-neutral-600 text-sm mt-2 px-4">
+                  Found {{ total_matches }} item{% if total_matches != 1 %}s{% endif %} matching "{{ search_query }}"
+                </p>
+              {% endif %}
             </div>
             <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Clothing</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
@@ -66,7 +72,7 @@
             <!-- Pagination Controls -->
             <div class="flex justify-center items-center gap-4 py-6">
                 {% if current_page > 1 %}
-                <a href="{{ url_for('shop', page=current_page-1) }}" class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
+                <a href="{{ url_for('shop', page=current_page-1, search=search_query) }}" class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
                     Previous
                 </a>
                 {% endif %}
@@ -76,7 +82,7 @@
                 </span>
                 
                 {% if current_page < total_pages %}
-                <a href="{{ url_for('shop', page=current_page+1) }}" class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
+                <a href="{{ url_for('shop', page=current_page+1, search=search_query) }}" class="px-4 py-2 rounded-lg border border-[#dbdbdb] bg-neutral-50 text-[#141414] hover:bg-neutral-100">
                     Next
                 </a>
                 {% endif %}

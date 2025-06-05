@@ -1,8 +1,40 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import urllib.parse
+from nltk.stem import WordNetLemmatizer
 
 app = Flask(__name__)
+
+def lemmatize_text(text):
+    lemmatizer = WordNetLemmatizer()
+    # Simple word splitting instead of using punkt tokenizer
+    words = text.lower().split()
+    return [lemmatizer.lemmatize(word) for word in words]
+
+def search_items(df, query):
+    if not query:
+        return df[['Clothing ID', 'Clothes Title']].drop_duplicates()
+    
+    # Lemmatize the search query
+    query_lemmas = set(lemmatize_text(query))
+    
+    # Create a mask for matching items
+    mask = pd.Series(False, index=df.index)
+    
+    # Search in both title and ID
+    for idx, row in df.iterrows():
+        # Lemmatize the title
+        title_lemmas = set(lemmatize_text(str(row['Clothes Title'])))
+        # Check if any query lemma matches any title lemma
+        if query_lemmas.intersection(title_lemmas):
+            mask[idx] = True
+            continue
+            
+        # Check if the query matches the ID
+        if query.lower() in str(row['Clothing ID']).lower():
+            mask[idx] = True
+    
+    return df[mask][['Clothing ID', 'Clothes Title']].drop_duplicates()
 
 @app.route('/')
 def index():
@@ -12,24 +44,33 @@ def index():
 def shop():
     # Read the CSV file
     df = pd.read_csv('assignment3_II.csv')
-    # Get unique clothing items with their IDs and titles
-    clothing_items = df[['Clothing ID', 'Clothes Title']].drop_duplicates().to_dict('records')
+    
+    # Get search query
+    search_query = request.args.get('search', '').strip()
+    
+    # Get filtered items based on search
+    clothing_items = search_items(df, search_query)
+    
+    # Get total number of matched items
+    total_matches = len(clothing_items)
     
     # Pagination
     page = request.args.get('page', 1, type=int)
     items_per_page = 20
-    total_items = len(clothing_items)
+    total_items = total_matches
     total_pages = (total_items + items_per_page - 1) // items_per_page
     
     # Get items for current page
     start_idx = (page - 1) * items_per_page
     end_idx = start_idx + items_per_page
-    current_items = clothing_items[start_idx:end_idx]
+    current_items = clothing_items.iloc[start_idx:end_idx].to_dict('records')
     
     return render_template('shop.html', 
                          clothing_items=current_items,
                          current_page=page,
-                         total_pages=total_pages)
+                         total_pages=total_pages,
+                         search_query=search_query,
+                         total_matches=total_matches)
 
 @app.route('/item/<int:item_id>/<path:title>')
 def item(item_id, title):
