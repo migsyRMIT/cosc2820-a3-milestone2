@@ -130,30 +130,117 @@
       </div>
     </div>
 
+    <!-- Loading Modal -->
+    <div 
+      id="loadingModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="loadingModalContent">
+        <div class="px-6 py-8">
+          <div class="text-center space-y-4">
+            <div class="flex justify-center">
+              <svg class="animate-spin h-12 w-12 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
+            <p class="text-[#141414] text-lg">Processing your review...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Purchase Confirmation Modal -->
+    <div 
+      id="purchaseModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="purchaseModalContent">
+        <div class="px-6 py-8">
+          <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight text-center pb-6">
+            Confirm Purchase
+          </h2>
+          
+          <div class="text-center space-y-4">
+            <p class="text-[#141414] text-lg">Are you sure you want to purchase this item?</p>
+            <div class="flex justify-center gap-3 pt-4">
+              <button
+                type="button"
+                id="cancelPurchaseBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 transition-colors"
+              >
+                <span class="truncate">Cancel</span>
+              </button>
+              <button
+                type="button"
+                id="confirmPurchaseBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+              >
+                <span class="truncate">Confirm</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Confirmation Modal -->
     <div 
       id="confirmationModal" 
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
     >
-      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[512px] w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="confirmationModalContent">
         <div class="px-6 py-8">
           <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight text-center pb-6">
-            Are you sure you want to purchase this item?
+            Review Prediction
           </h2>
           
-          <div class="flex gap-3 justify-center">
-            <button
-              id="cancelBtn"
-              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 transition-colors"
-            >
-              <span class="truncate">Cancel</span>
-            </button>
-            <button
-              id="confirmBtn"
-              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
-            >
-              <span class="truncate">Confirm</span>
-            </button>
+          <div class="text-center space-y-4">
+            <p class="text-[#141414] text-lg" id="predictionMessage"></p>
+            <p class="text-[#141414] text-lg">Is this prediction correct?</p>
+            <div class="flex justify-center gap-3 pt-4">
+              <button
+                type="button"
+                id="predictionNoBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 transition-colors"
+              >
+                <span class="truncate">No</span>
+              </button>
+              <button
+                type="button"
+                id="predictionYesBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+              >
+                <span class="truncate">Yes</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Submitted Modal -->
+    <div 
+      id="reviewSubmittedModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-neutral-50 rounded-lg shadow-xl max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0" id="reviewSubmittedModalContent">
+        <div class="px-6 py-8">
+          <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight text-center pb-6">
+            Review Submitted
+          </h2>
+          
+          <div class="text-center space-y-4">
+            <p class="text-[#141414] text-lg" id="submissionMessage"></p>
+            <div class="flex justify-center gap-3 pt-4">
+              <button
+                type="button"
+                id="closeSubmissionBtn"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+              >
+                <span class="truncate">Close</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -269,13 +356,23 @@
   <script>
     // Modal functionality
     const buyNowBtn = document.getElementById('buyNowBtn');
+    const purchaseModal = document.getElementById('purchaseModal');
+    const purchaseModalContent = document.getElementById('purchaseModalContent');
+    const cancelPurchaseBtn = document.getElementById('cancelPurchaseBtn');
+    const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
     const confirmationModal = document.getElementById('confirmationModal');
-    const modalContent = document.getElementById('modalContent');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const confirmBtn = document.getElementById('confirmBtn');
+    const confirmationModalContent = document.getElementById('confirmationModalContent');
     const reviewModal = document.getElementById('reviewModal');
     const reviewModalContent = document.getElementById('reviewModalContent');
     const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+    const reviewSubmittedModal = document.getElementById('reviewSubmittedModal');
+    const reviewSubmittedModalContent = document.getElementById('reviewSubmittedModalContent');
+    const predictionYesBtn = document.getElementById('predictionYesBtn');
+    const predictionNoBtn = document.getElementById('predictionNoBtn');
+    const closeSubmissionBtn = document.getElementById('closeSubmissionBtn');
+    const submissionMessage = document.getElementById('submissionMessage');
+    const loadingModal = document.getElementById('loadingModal');
+    const loadingModalContent = document.getElementById('loadingModalContent');
     const reviewForm = document.getElementById('reviewForm');
 
     function showModal(modal, content) {
@@ -296,20 +393,27 @@
 
     // Buy Now button click handler
     buyNowBtn.addEventListener('click', () => {
-      showModal(confirmationModal, modalContent);
+      showModal(purchaseModal, purchaseModalContent);
     });
 
-    // Cancel button click handler
-    cancelBtn.addEventListener('click', () => {
-      hideModal(confirmationModal, modalContent);
+    // Purchase modal cancel button click handler
+    cancelPurchaseBtn.addEventListener('click', () => {
+      hideModal(purchaseModal, purchaseModalContent);
     });
 
-    // Confirm button click handler
-    confirmBtn.addEventListener('click', () => {
-      hideModal(confirmationModal, modalContent);
+    // Purchase modal confirm button click handler
+    confirmPurchaseBtn.addEventListener('click', () => {
+      hideModal(purchaseModal, purchaseModalContent);
       setTimeout(() => {
         showModal(reviewModal, reviewModalContent);
       }, 400);
+    });
+
+    // Close purchase modal when clicking outside
+    purchaseModal.addEventListener('click', (e) => {
+      if (e.target === purchaseModal) {
+        hideModal(purchaseModal, purchaseModalContent);
+      }
     });
 
     // Review modal cancel button click handler
@@ -317,13 +421,7 @@
       hideModal(reviewModal, reviewModalContent);
     });
 
-    // Close modals when clicking outside
-    confirmationModal.addEventListener('click', (e) => {
-      if (e.target === confirmationModal) {
-        hideModal(confirmationModal, modalContent);
-      }
-    });
-
+    // Close review modal when clicking outside
     reviewModal.addEventListener('click', (e) => {
       if (e.target === reviewModal) {
         hideModal(reviewModal, reviewModalContent);
@@ -369,31 +467,159 @@
     }
 
     // Handle review form submission
-    reviewForm.addEventListener('submit', (e) => {
+    reviewForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const formData = new FormData(reviewForm);
-      const reviewData = {
-        title: formData.get('reviewTitle'),
-        description: formData.get('reviewDescription'),
-        rating: parseInt(formData.get('rating')),
-        age: formData.get('userAge')
-      };
-
-      if (reviewData.rating === 0) {
+      
+      if (selectedRatingInput.value === '0') {
         alert('Please select a rating before submitting your review.');
         return;
       }
 
-      // Reset form and close modal
-      reviewForm.reset();
-      currentRating = 0;
-      selectedRatingInput.value = 0;
-      updateStarDisplay();
-      hideModal(reviewModal, reviewModalContent);
+      try {
+        // Hide review modal and show loading modal
+        hideModal(reviewModal, reviewModalContent);
+        showModal(loadingModal, loadingModalContent);
+        
+        // First request to get prediction
+        const predictionResponse = await fetch(window.location.href, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (predictionResponse.ok) {
+          // Hide loading modal
+          hideModal(loadingModal, loadingModalContent);
+          
+          // Show prediction confirmation modal
+          const data = await predictionResponse.json();
+          const predictionMessage = document.getElementById('predictionMessage');
+          predictionMessage.textContent = data.recommended ? 
+            "Based on your review, you would recommend this product!" :
+            "Based on your review, you would not recommend this product.";
+          
+          showModal(confirmationModal, confirmationModalContent);
+          
+          // Store the form data and prediction for later use
+          window.pendingReview = {
+            formData: formData,
+            predictedRecommendation: data.recommended
+          };
+        }
+      } catch (error) {
+        // Hide loading modal on error
+        hideModal(loadingModal, loadingModalContent);
+        console.error('Error submitting review:', error);
+        alert('There was an error submitting your review. Please try again.');
+      }
+    });
 
-      // Show success message
-      alert('Thank you for your review! Your feedback has been submitted.');
+    // Handle prediction confirmation
+    predictionYesBtn.addEventListener('click', async () => {
+      try {
+        // Hide prediction confirmation modal
+        hideModal(confirmationModal, confirmationModalContent);
+        
+        // Show loading modal
+        showModal(loadingModal, loadingModalContent);
+        
+        // Submit the review with the predicted recommendation
+        const formData = window.pendingReview.formData;
+        formData.append('final_submission', 'true');
+        
+        const response = await fetch(window.location.href, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (response.ok) {
+          // Hide loading modal
+          hideModal(loadingModal, loadingModalContent);
+          
+          // Show submission success modal
+          submissionMessage.textContent = "Your review has been submitted successfully!";
+          showModal(reviewSubmittedModal, reviewSubmittedModalContent);
+          
+          // Reset form
+          reviewForm.reset();
+          currentRating = 0;
+          selectedRatingInput.value = 0;
+          updateStarDisplay();
+          
+          // Reload the page after a short delay
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }
+      } catch (error) {
+        hideModal(loadingModal, loadingModalContent);
+        console.error('Error submitting review:', error);
+        alert('There was an error submitting your review. Please try again.');
+      }
+    });
+
+    predictionNoBtn.addEventListener('click', async () => {
+      try {
+        // Hide prediction confirmation modal
+        hideModal(confirmationModal, confirmationModalContent);
+        
+        // Show loading modal
+        showModal(loadingModal, loadingModalContent);
+        
+        // Submit the review with the opposite recommendation
+        const formData = window.pendingReview.formData;
+        formData.append('override_recommendation', !window.pendingReview.predictedRecommendation);
+        formData.append('final_submission', 'true');
+        
+        const response = await fetch(window.location.href, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (response.ok) {
+          // Hide loading modal
+          hideModal(loadingModal, loadingModalContent);
+          
+          // Show submission success modal
+          submissionMessage.textContent = "Your review has been submitted successfully!";
+          showModal(reviewSubmittedModal, reviewSubmittedModalContent);
+          
+          // Reset form
+          reviewForm.reset();
+          currentRating = 0;
+          selectedRatingInput.value = 0;
+          updateStarDisplay();
+          
+          // Reload the page after a short delay
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }
+      } catch (error) {
+        hideModal(loadingModal, loadingModalContent);
+        console.error('Error submitting review:', error);
+        alert('There was an error submitting your review. Please try again.');
+      }
+    });
+
+    // Close submission modal
+    closeSubmissionBtn.addEventListener('click', () => {
+      hideModal(reviewSubmittedModal, reviewSubmittedModalContent);
+    });
+
+    // Close submission modal when clicking outside
+    reviewSubmittedModal.addEventListener('click', (e) => {
+      if (e.target === reviewSubmittedModal) {
+        hideModal(reviewSubmittedModal, reviewSubmittedModalContent);
+      }
+    });
+
+    // Close confirmation modal when clicking outside
+    confirmationModal.addEventListener('click', (e) => {
+      if (e.target === confirmationModal) {
+        hideModal(confirmationModal, confirmationModalContent);
+      }
     });
   </script>
 </body>
