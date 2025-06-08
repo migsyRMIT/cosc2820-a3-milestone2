@@ -4,6 +4,9 @@
 
 This is a Flask-based web application for a clothing review system that includes machine learning capabilities for predicting whether a review would recommend a product. The system uses FastText embeddings and Logistic Regression for predictions.
 
+The Python source code and the .mp4 video file can be found in this OneDrive link:
+
+
 ## Prerequisites
 
 - Python 3.8 or higher
@@ -13,7 +16,7 @@ This is a Flask-based web application for a clothing review system that includes
 
 1. Extract the zip file to your desired location:
 ```bash
-unzip cosc2820-a3-milestone2.zip
+unzip s3969740.zip
 cd cosc2820-a3-milestone2
 ```
 
